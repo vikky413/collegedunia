@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css" >
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <!-- This is a popup url  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <!-- Popup url end  -->
+    <link rel="stylesheet" href="form.css" >
+    <link rel="stylesheet" href="search.css" >
+    <link rel="stylesheet" href="static/css/chat.css">
+    <link rel="stylesheet" href="static/css/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script src="form.js"></script>
+    <title>Colleges</title>
+
+  <!-- This is Popup Styles -->
+  <style media="screen">
+    @import url('https://fonts.googleapis.com/css?family=Lobster+Two:700|Poppins&display=swap');
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body{
+    background: white;
+    font-family: 'Poppins',sans-serif;
+  }
+  
+  .center,.start-btn{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .start-btn a{
+    font-size: 22px;
+    background: green;
+    color: #02242b;
+    padding: 15px 18px;
+    border-radius: 5px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px;
+  
+  }
+  .modal-box{
+    top: 40%;
+    opacity: 0;
+    visibility: hidden;
+    background: white;
+    height: auto;
+    width: 480px;
+    margin-top:140px;
+    padding: 18px 10px;
+    border-radius: 5px;
+    box-shadow: 5px 5px 30px rgba(0,0,0,.2);
+  }
+  
+  .start-btn.show-modal{
+    opacity: 0;
+    visibility: hidden;
+  }
+  .modal-box.show-modal{
+    top: 50%;
+    opacity: 1;
+    visibility: visible;
+    transition: .4s;
+  }
+  .modal-box .fa-times{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #0569d4;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    margin: 10px;
+  
+    color: white;
+    font-size: 18px;
+    border-radius: 100%;
+    text-align: center;
+    cursor: pointer;
+  }
+  .fa-times:hover{
+    font-size: 22px;
+  }
+  
+  
+  .form_container{
+    background: #fff;
+    padding: 30px;
+    margin-top: 20px;
+    border-radius: 3px;
+  }
+  
+  .form_container .form_item{
+    margin-bottom: 25px;
+  }
+  
+  .form_container .form_wrap.form_grp{
+    display: flex;
+  }
+  
+  .form_container .form_wrap.form_grp .form_item{
+    width: 50%;
+  }
+  
+  .form_container .form_wrap.form_grp .form_item:first-child{
+    margin-right: 4%;
+  }
+  
+  .form_container .form_item label{
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .form_container .form_item input,
+  .form_container .form_item select{
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #dadce0;
+    border-radius: 3px;
+  }
+   
+  .form_container .btn input[type="submit"]{
+    background: #6271f0;
+    border: 1px solid #6271f0;
+    padding: 10px;
+    width: 100%;
+    border-radius: 3px;
+    cursor: pointer;
+    color: #fff;
+  }
+  </style>
+
+  <!-- Popup style End  -->
+
+</head>
+
+<body>
+    <div class="menu-bar">
+     <ul>
+        <li class="active navb" style="margin-right: 152px;"><a href="#">Colleges</a></li>
+        
+        <li class="navb"><a href="#">B.Tech</a>
+        <div class="sub-menu-1">
+          <ul>
+            <li class="hover-me"><a href="#">Colleges</a> <i class="fa fa-angle-right"></i> 
+             <div class="sub-menu-2">
+                <ul>
+                    <li><a href="/nit">NIT</a>  </li>
+                    <li><a href="/iit">IIT</a> </li>
+                    <li><a href="/iiit">IIIT</a> </li>
+                    <li><a href="/pvtbtech">Private</a> </li> 
+                  </ul>
+
+             </div>
+            
+            </li>
+            <li class="hover-me"><a href="#">Exam</a> <i class="fa fa-angle-right"></i>
+                <div class="sub-menu-2">
+                    <ul>
+                        <li><a href="/jee">JEE MAINS</a>  </li>
+                        <li><a href="/wbjee">WB JEE</a> </li>
+                        <li><a href="/ajee">JEE ADVANCED</a> </li>
+                        <li><a href="/bits">BITS PLANI</a> </li> 
+                      </ul>
+    
+                 </div>
+            </li>
+            
+            <li class="hover-me"><a href="#">Cut Off</a> <i class="fa fa-angle-right"></i>
+                <div class="sub-menu-2">
+                    <ul>
+                        <li><a href="/jeecutoff">JEE MAINS CUTOFF</a>  </li>
+                        <li><a href="/wbcutoff">WB JEE CUTOFF</a> </li>
+                        <li><a href="/ajcutoff">JEE ADVANCED CUTOFF</a> </li>
+                        <li><a href="/bitscutoff">BITS PLANI CUTOFF</a></li> 
+                      </ul>
+    
+                 </div>
+            </li> 
+          </ul>
+        </div>
+    </li>
+        <li class="navb"><a href="#">MBA</a>
+            <div class="sub-menu-1">
+                <ul>
+                  <li class="hover-me"><a href="#">Colleges</a> <i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="/iim">IIM</a>  </li>
+                            <li><a href="#">Top Govt</a> </li>
+                            <li><a href="#">Top Pvt</a> </li>
+          
+                          </ul>
+        
+                     </div>
+                </li>
+                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="/cat">CAT</a>  </li>
+                            <li><a href="#">MAT</a> </li>
+                            <li><a href="#">GMAT</a> </li>
+                            <li><a href="#">CMAT</a> </li> 
+                          </ul>
+        
+                     </div>
+                </li>
+                
+                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i> 
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="#">CAT Cutoff</a>  </li>
+                            <li><a href="#">MAT Cutoff</a> </li>
+                            <li><a href="#">GMAT Cutoff</a> </li>
+                            <li><a href="#">CMAT Cutoff</a> </li> 
+                          </ul>
+                     </div>
+                 </li> 
+                </ul>
+              </div>
+        </li>
+        <li class="navb"><a href="#">MBBS</a>
+            <div class="sub-menu-1">
+                <ul>
+                  <li class="hover-me"><a href="#">Colleges</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="#">AIIMS</a>  </li>
+                            <li><a href="#">Top Govt</a> </li>
+                            <li><a href="#">Top Pvt</a> </li>
+              
+                          </ul>
+        
+                     </div>
+                  </li>
+                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="/neet">NEET</a>  </li>
+                            
+                          </ul>      
+                     </div>
+                </li>
+                  
+                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="#">NEET Cutoff</a>  </li>
+                            
+                          </ul>
+        
+                     </div>
+                 </li> 
+                </ul>
+              </div>
+        </li>
+        <li class="navb"><a href="#">LAW</a>
+            <div class="sub-menu-1">
+                <ul>
+                  <li class="hover-me"><a href="#">Colleges</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="#">Top Govt</a>  </li>
+                            <li><a href="#">Top pvt</a> </li>
+                           
+                          </ul>
+        
+                     </div>
+                 </li>
+                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="/clat">CLAT</a>  </li>
+                            <li><a href="#">LSAT</a> </li>
+                            <li><a href="#">AILET</a> </li>
+                             
+                          </ul>
+        
+                     </div>
+                 </li>
+                  
+                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i>
+                    <div class="sub-menu-2">
+                        <ul>
+                            <li><a href="#">CLAT Cutoff</a>  </li>
+                            <li><a href="#">LSAT Cutoff</a> </li>
+                            <li><a href="#">AILET Cutoff</a> </li>
+                          
+                          </ul>
+        
+                     </div>
+                 </li> 
+                </ul>
+              </div>
+        </li>
+        
+
+        <li class="users"><button onclick="openForm()"><i class="fa fa-users"></i></button>
+            <!-- <div class="sub-menu-1">
+               <ul>
+                <li class="hover-me"><button style="background-color: green; color: white;" onclick="openForm()">Signin</button></li>
+               </ul>
+            </div> -->
+        </li>
+     </ul>
+    </div>
+
+
+  
+    <!-- This is Search Part in form -->
+
+    <form class="example" action="#">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+
+    <!-- This is a popup login form -->
+
+
+    
+
+    <div class="form-popup" id="myForm">
+      <form action="/login" class="form-container" method="post">
+       
+      <h1>Login</h1>
+    
+        <label for="email"><b>UserName</b></label>
+        <input type="text" placeholder="Enter Email" name="username" required>
+    
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+    
+        <button type="submit" class="btn">Login</button>
+        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+      </form>
+    </div>
+
+
+ <!-- This is a popup Registration page  -->
+
+ <div class="popup">
+  <div class="start-btn">
+    <a href="#">Enquiry</a>
+ </div>
+ <div class="center modal-box">
+
+    <div class="fas fa-times"></div>
+
+
+
+<div class="form_container">
+<form action="/register" name="form"  method="post">
+ <div class="form_wrap form_grp">
+     <div class="form_item" name="fname">
+         <label  name="fname">First Name</label>
+         <input type="text" name="fname">
+
+     </div>
+     <div class="form_item">
+         <label>Last Name</label>
+         <input type="text" name="lname">
+
+     </div>
+ </div>
+ <div class="form_wrap">
+     <div class="form_item">
+         <label >Email Address</label>
+         <input type="text" name="email">
+
+     </div>
+ </div>
+
+ <div class="form_wrap">
+     <div class="form_item">
+         <label>Phone</label>
+         <input type="text" value="+91 " maxlength="14" name="pnumber">
+         <div class="error" id="phone"></div>
+     </div>
+ </div>
+ <div class="btn">
+   <input type="submit" id="btn2" value="Register">
+ </div>
+</form>
+</div>
+</div>
+
+ </div>
+
+
+
+ <!-- CHAT BAR BLOCK -->
+ <div class="chat-bar-collapsible">
+  <button id="chat-button" type="button" class="collapsible">Chat with us!
+      <i id="chat-icon" style="color: #fff;" class="fa fa-fw fa-comments-o"></i>
+  </button>
+
+  <div class="content">
+      <div class="full-chat-block">
+          <!-- Message Container -->
+          <div class="outer-container">
+              <div class="chat-container">
+                  <!-- Messages -->
+                  <div id="chatbox">
+                      <h5 id="chat-timestamp"></h5>
+                      <p id="botStarterMessage" class="botText"><span>Loading...</span></p>
+                  </div>
+
+                  <!-- User input box -->
+                  <div class="chat-bar-input-block">
+                      <div id="userInput">
+                          <input id="textInput" class="input-box" type="text" name="msg"
+                              placeholder="Tap 'Enter' to send a message">
+                          <p></p>
+                      </div>
+
+                      <div class="chat-bar-icons">
+                          <i id="chat-icon" style="color: crimson;" class="fa fa-fw fa-heart"
+                              onclick="heartButton()"></i>
+                          <i id="chat-icon" style="color: #333;" class="fa fa-fw fa-send"
+                              onclick="sendButton()"></i>
+                      </div>
+                  </div>
+
+                  <div id="chat-bar-bottom">
+                      <p></p>
+                  </div>
+
+              </div>
+          </div>
+
+      </div>
+  </div>
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="static/scripts/responses.js"></script>
+<script src="static/scripts/chat.js"></script>
+
+
+ <script>
+  $(document).ready(function(){
+    $('.start-btn').click(function(){
+      $('.modal-box').toggleClass("show-modal");
+      $('.start-btn').toggleClass("show-modal");
+    });
+    $('.fa-times').click(function(){
+      $('.modal-box').toggleClass("show-modal");
+      $('.start-btn').toggleClass("show-modal");
+    });
+  });
+</script>
+</body>
+</html>
