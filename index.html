@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!----======== CSS ======== -->
+
+<!----===== Boxicons CSS ===== -->
+<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+<!--<title>Dashboard Sidebar Menu</title>--> 
+<link rel="stylesheet" href="navbar_css.css">
+</head>
+<body>
+<nav class="sidebar close">
+<header>
+<div class="image-text">
+<span class="image">
+<!--<img src="logo.png" alt="">-->
+</span>
+
+ 
+
+                <div class="text logo-text">
+<span class="name">Welcome</span>
+<span class="profession">student Name</span>
+</div>
+</div>
+
+ 
+
+            <i class='bx bx-chevron-right toggle'></i>
+</header>
+
+ 
+
+        <div class="menu-bar">
+<div class="menu">
+
+ 
+
+   
+
+                <ul class="menu-links">
+<li class="nav-link">
+<a href="#Dashboard" onclick="dashboard()">
+<i class='bx bx-home-alt icon' ></i>
+<span class="text nav-text">Personal details</span>
+</a>
+</li>
+
+ 
+
+                    <li class="nav-link">
+<a href="#Account_detail" onclick="visibility()">
+<i class='bx bx-wallet icon' ></i>
+<span class="text nav-text">Payment Status</span>
+</a>
+</li>
+
+ 
+
+    
+
+ 
+
+                    <li class="nav-link">
+<a href="#Marksheet" onclick="marksheet()">
+<i class='bx bx-pie-chart-alt icon' ></i>
+<span class="text nav-text">Marksheet</span>
+</a>
+</li>
+
+ 
+
+                    <li class="nav-link">
+<a href="#Updates" onclick="updates()">
+    <i class='bx bx-bell icon'></i>
+<span class="text nav-text">Updates</span>
+</a>
+</li>
+
+ 
+
+    
+ 
+
+                </ul>
+</div>
+
+ 
+
+            <div class="bottom-content">
+<li class="">
+<a href="#">
+<i class='bx bx-log-out icon' ></i>
+<span class="text nav-text">Logout</span>
+</a>
+</li>
+
+ 
+
+            
+
+</div>
+</div>
+
+ 
+
+    </nav>
+
+ 
+
+    <section class="home">
+<div class="text">Dashboard Sidebar</div>
+<div id="Dashboard" style="visibility: hidden;" class="collpase"><div style="text-align: center;"> Student Details </div>
+</div>
+<div id="Account_detail" style="visibility: hidden;" class="collpase">Waiting For Approval</div>
+<div id="Marksheet" style="visibility: hidden;" class="collpase"><h1 style="text-align: center; color: red;">No Data available</h1></div>
+<div id="Updates" style="visibility: hidden;" class="collpase"><h1 style="text-align: center; color: red;">No Data available</h1></div>
+</section>
+
+ 
+
+    <script>
+        const body = document.querySelector('body'),
+      sidebar = body.querySelector('nav'),
+      toggle = body.querySelector(".toggle"),
+      searchBtn = body.querySelector(".search-box"),
+      modeSwitch = body.querySelector(".toggle-switch"),
+      modeText = body.querySelector(".mode-text");
+
+ 
+
+
+toggle.addEventListener("click" , () =>{
+    sidebar.classList.toggle("close");
+})
+
+ 
+
+searchBtn.addEventListener("click" , () =>{
+    sidebar.classList.remove("close");
+})
+
+ 
+
+modeSwitch.addEventListener("click" , () =>{
+    body.classList.toggle("dark");
+
+    if(body.classList.contains("dark")){
+        modeText.innerText = "Light mode";
+    }else{
+        modeText.innerText = "Dark mode";
+
+    }
+});
+
+ 
+
+function visibility(){
+    document.getElementById("Account_detail").style.visibility = "visible";
+    document.getElementById("Dashboard").style.visibility = "hidden";
+    document.getElementById("Marksheet").style.visibility = "hidden";
+    document.getElementById("Updates").style.visibility = "hidden";
+}
+function dashboard(){
+    document.getElementById("Dashboard").style.visibility = "visible";
+    document.getElementById("Account_detail").style.visibility = "hidden";
+    document.getElementById("Marksheet").style.visibility = "hidden";
+    document.getElementById("Updates").style.visibility = "hidden";
+}
+function marksheet() {
+    document.getElementById("Marksheet").style.visibility = "visible";
+    document.getElementById("Account_detail").style.visibility = "hidden";
+    document.getElementById("Dashboard").style.visibility = "hidden";
+    document.getElementById("Updates").style.visibility = "hidden";
+}
+function updates() {
+    document.getElementById("Marksheet").style.visibility = "hidden";
+    document.getElementById("Account_detail").style.visibility = "hidden";
+    document.getElementById("Dashboard").style.visibility = "hidden";
+    document.getElementById("Updates").style.visibility = "visible";
+}
+
+</script>
+
+ 
+
+</body>
+</html>
