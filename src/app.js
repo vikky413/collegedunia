@@ -312,7 +312,66 @@ app.get('/iit', (req, res) => {
 app.get('/iim', (req, res) => {
   res.render('iim')
 })
-
+app.get('/addiim', (req, res) => {
+  res.render('addiim')
+})
+app.get('/addiit', (req, res) => {
+  res.render('addiit')
+})
+app.get('/addiiit', (req, res) => {
+  res.render('addiiit')
+})
+app.get('/addmbapvt', (req, res) => {
+  res.render('addmbapvt')
+})
+app.get('/addnit', (req, res) => {
+  res.render('addnit')
+})
+app.get('/addpvt', (req, res) => {
+  res.render('addpvt')
+})
+app.get('/aiims', (req, res) => {
+  res.render('aiims')
+})
+app.get('/bitscutoff', (req, res) => {
+  res.render('bitscutoff')
+})
+app.get('/catcutoff', (req, res) => {
+  res.render('catcutoff')
+})
+app.get('/cmat', (req, res) => {
+  res.render('cmat')
+})
+app.get('/cmatcutoff', (req, res) => {
+  res.render('cmatcutoff')
+})
+app.get('/gmat', (req, res) => {
+  res.render('gmat')
+})
+app.get('/gmatcutoff', (req, res) => {
+  res.render('gmatcutoff')
+})
+app.get('/iim', (req, res) => {
+  res.render('iim')
+})
+app.get('/laws', (req, res) => {
+  res.render('laws')
+})
+app.get('/mat', (req, res) => {
+  res.render('mat')
+})
+app.get('/mbapvt', (req, res) => {
+  res.render('mbapvt')
+})
+app.get('/mgovt', (req, res) => {
+  res.render('mgovt')
+})
+app.get('/mpvt', (req, res) => {
+  res.render('mpvt')
+})
+app.get('/neetcutoff', (req, res) => {
+  res.render('neetcutoff')
+})
 app.get('/govtb', (req, res) => {
   res.render('govtb')
 })
