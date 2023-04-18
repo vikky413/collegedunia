@@ -1,15 +1,18 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    Name : {
+    name : {
         type:String,
-        required:true,
-        unique:true
+        required:true,   
     },
-    Tid : {
+    
+    card : {
+        type:String,
+        required:true,   
+    },
+    tid : {
         type:String,
         required:true,
-        unique:true
     },
     stuid : {
         type:Number,
