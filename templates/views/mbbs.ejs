@@ -13,199 +13,87 @@
   <link rel="stylesheet" href="search.css">
   <script src="form.js"></script>
   <title>Colleges</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
   <!-- This is Popup Styles -->
-  <style media="screen">
-    @import url('https://fonts.googleapis.com/css?family=Lobster+Two:700|Poppins&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background: white;
-      font-family: 'Poppins', sans-serif;
-    }
-
-    .center,
-    .start-btn {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .start-btn a {
-      font-size: 22px;
-      background: green;
-      color: #02242b;
-      padding: 15px 18px;
-      border-radius: 5px;
-      text-decoration: none;
-      text-transform: uppercase;
-      font-weight: 600;
-      letter-spacing: 1px;
-
-    }
-
-    .modal-box {
-      top: 40%;
-      opacity: 0;
-      visibility: hidden;
-      background: white;
-      height: auto;
-      width: 480px;
-      margin-top: 140px;
-      padding: 18px 10px;
-      border-radius: 5px;
-      box-shadow: 5px 5px 30px rgba(0, 0, 0, .2);
-    }
-
-    .start-btn.show-modal {
-      opacity: 0;
-      visibility: hidden;
-    }
-
-    .modal-box.show-modal {
-      top: 50%;
-      opacity: 1;
-      visibility: visible;
-      transition: .4s;
-    }
-
-    .modal-box .fa-times {
-      position: absolute;
-      top: 0;
-      right: 0;
-      background: #0569d4;
-      height: 40px;
-      width: 40px;
-      line-height: 40px;
-      margin: 10px;
-
-      color: white;
-      font-size: 18px;
-      border-radius: 100%;
-      text-align: center;
-      cursor: pointer;
-    }
-
-    .fa-times:hover {
-      font-size: 22px;
-    }
-
-
-    .form_container {
-      background: #fff;
-      padding: 30px;
-      margin-top: 20px;
-      border-radius: 3px;
-    }
-
-    .form_container .form_item {
-      margin-bottom: 25px;
-    }
-
-    .form_container .form_wrap.form_grp {
-      display: flex;
-    }
-
-    .form_container .form_wrap.form_grp .form_item {
-      width: 50%;
-    }
-
-    .form_container .form_wrap.form_grp .form_item:first-child {
-      margin-right: 4%;
-    }
-
-    .form_container .form_item label {
-      display: block;
-      margin-bottom: 5px;
-    }
-
-    .form_container .form_item input,
-    .form_container .form_item select {
-      width: 100%;
-      padding: 10px;
-      font-size: 16px;
-      border: 1px solid #dadce0;
-      border-radius: 3px;
-    }
-
-    .form_container .btn input[type="submit"] {
-      background: #6271f0;
-      border: 1px solid #6271f0;
-      padding: 10px;
-      width: 100%;
-      border-radius: 3px;
-      cursor: pointer;
-      color: #fff;
-    }
-  </style>
+ 
 
   <!-- Popup style End  -->
 
 </head>
 
 <body>
+  <div>
   <div class="menu-bar">
     <ul>
-      <li class="active navb" style="margin-right: 152px;"><a href="#">MBBS</a></li>
-      <li class="navb"><a href="#">IIT</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li class="hover-me"><a href="/iit">View</a>
-            </li>
-            <li class="hover-me"><a href="/addiit">ADD</a>
-            </li>
+      <li class="active navb" style="margin-right: 152px;"><a href="#">MBA</a></li>
 
-          </ul>
-        </div>
-      </li>
-      <li class="navb"><a href="#">NIT</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li class="hover-me"><a href="/nit">View</a>
-            </li>
-            <li class="hover-me"><a href="/addnit">ADD</a>
-            </li>
-
-          </ul>
-        </div>
-      </li>
-      <li class="navb"><a href="#">IIIT</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li class="hover-me"><a href="/iiit">View</a>
-            </li>
-            <li class="hover-me"><a href="/addiiit">ADD</a>
-            </li>
-
-          </ul>
-        </div>
-      </li>
-      <li class="navb"><a href="#">Cutoff</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li class="hover-me"><a href="/jeecutoff">View</a>
-            </li>
-            <li class="hover-me"><a href="#">ADD</a>
-            </li>
-
-          </ul>
-        </div>
-      </li>
-
-
-      <li class="users"><button onclick="openForm()"><i class="fa fa-users"></i></button>
-        
-      </li>
     </ul>
   </div>
+  <div class="container">
+    <div class="row">
+        <h1>Total Colleges</h1>
+        <br>
+     <table class="table table-striped table-primary">
+      <thead>
+        <tr>
+          <th>Rank</th>
+          <th>College Type</th>
+          <th>College Name</th>
+          <th>College Fee</th>
+          <th>College Address</th>
+          <th>State</th>
+          <th>Reviews</th>
+          <th>College Link</th>
+          <th>Action</th>
 
 
+        </tr>
+      </thead>
+      <tbody>
+       <% if(records.length>0){
+        records.forEach(function(row){
+       
+        %>
+        <tr>
+          <td><%= row.rank %></td>
+          <td><%= row.cat %></td>
+          <td><%= row.cname %></td>
+          <td><%= row.fees %></td>
+          <td><%= row.address %></td>
+          <td><%= row.state %></td>
+          <td><%= row.reviews %></td>
+          <td><%= row.link %></td>
+          <td>
+
+            <a class="btn btn-danger btn-xs" href="/password-detaild/delete/<%= row._id %>" onclick="return confirm('Are you sure?')"><i class="fa fa-trash"></i></a>
+          </td>
+        </tr>
+        <!-- Modal -->
+        <%    
+      })} %>
+      </tbody>
+    </table>
+  
+  
+  </div>
+</div>
+<button style="background-color: green; margin-left: 650px; margin-top: 20px; width: 250px; height: 57px; margin-bottom: 306px;"><a style="color: white;" href="/addiim">Add College</a></button>
+
+
+
+  <div style="background: #02242b; width: 100%; text-align: center; " >
+    <h2 style="color: white; padding: 20px;"><span style="font-size: 25px; color: blue;">M</span>BBS</h2>
+    <img src="mbbsLogo.jpg"  width="70px" height="70px" style="border-radius: 30px;"/>
+    <h4 style="color:white">Bachelor of Medicine, Bachelor of Surgery</h4>
+    <h3 style="color:white">© 2023 Bachelor of Medicine, Bachelor of Surgery, India. All rights reserved</h3>
+  </div>
+</div>
 
 
 </body>
