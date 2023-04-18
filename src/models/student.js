@@ -1,42 +1,26 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 const userSchema = new Schema({
-    name : {
-        type:String,
+    
+    jeemains : {
+        type:Number,
         required:true,
     },
-    mnumber : {
-        type:String,
+    jeeadvanced : {
+        type:Number,
         required:true,
     },
-    course : {
-        type:String,
-        required:true,
-    },
-    college : {
-        type:String,
-        required:true,
-    },
-    gender : {
-        type:String,
-        required:true,
-    },
-    username : {
-        type:String,
-        required:true,
-        unique:true
-    },
-    email : {
-        type:String,
-        required:true,
-        unique:true
-    },
-    password : {
-        type:String,
+
+    che : {
+        type:Number,
         required:true
     },
-    confirmpassword : {
-        type:String,
+    phy : {
+        type:Number,
+        required:true
+    },
+    math : {
+        type:Number,
         required:true
     },
     stuid : {
