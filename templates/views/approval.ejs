@@ -158,7 +158,7 @@
 <body>
   <div class="menu-bar">
     <ul>
-      <li class="active navb" style="margin-right: 152px;"><a href="#">STUDENT DETALS</a></li>
+      <li class="active navb" style="margin-right: 152px;"><a href="/admin">College</a></li>
       </li>
     </ul>
   </div>
@@ -171,14 +171,20 @@
      <table class="table table-striped table-primary">
       <thead>
         <tr>
-          <th>Name</th>
-          <th>Username</th>
-          <th>Gender</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date Of Birth</th>
+          <th>Mobile Number</th>
+          <th>Email</th>
           <th>College</th>
           <th>Course</th>
-          <th>Email</th>
+          <th>Jee Mains</th>
+          <th>Jee Advanced</th>
+          <th>Class X</th>
+          <th>Class XII</th>
+          <th>State</th>
           <th>Action</th>
-
+          
 
         </tr>
       </thead>
@@ -188,20 +194,29 @@
        
         %>
         <tr>
-          <td><%= row.name %></td>
-          <td><%= row.username %></td>
-          <td><%= row.gender %></td>
-          <td><%= row.gender %></td>
-          <td><%= row.college %></td>
-          <td><%= row.course %></td>
+          <td><%= row.fname %></td>
+          <td><%= row.lname %></td>
+          <td><%= row.date %>/<%= row.month %>/<%= row.year %></td>
+          <td><%= row.mnumber %></td>
           <td><%= row.email %></td>
+          <td><%= row.college %></td>
+          <th>B.Tech</th>
+          <td><%= row.jeemains %>/360</td>
+          <td><%= row.jeeadvanced %>/360</td>
+          <td><%= row.ClassX_Percentage %>%</td>
+          <td><%= row.ClassXII_Percentage %>%</td>
+          <td><%= row.state %></td>
          
-          <td>
+          <td style="display: flex;">
             <% if(row.stuid == 1){ %>
-              <a href="/foura/edit/<%= row._id %>"><button type="button" class="btn btn-danger">Approval</button></a>
-            <% } else { %>
+              <a href="/foura/edit/<%= row._id %>"><button type="button" class="btn btn-primary">Approval</button></a>
+              <a href="/fourb/edit/<%= row._id %>"><button style="margin-left: 3px;" type="button" class="btn btn-primary">Reject</button></a>
+
+            <% } else if(row.stuid == 0){ %>
             <a href="#"><button type="button" class="btn btn-success">Approved</button></a>
-              <% } %>
+              <% } else { %>
+                <a href="#"><button type="button" class="btn btn-danger">Rejected</button></a>
+               <% } %>
           </td>
         </tr>
         <!-- Modal -->
