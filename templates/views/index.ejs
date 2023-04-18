@@ -26,18 +26,21 @@
     box-sizing: border-box;
   }
   body{
-    background: white;
-    font-family: 'Poppins',sans-serif;
+    background-image: url(sbm.jpeg);
+    background-size: cover;
+    /* background-position: center; */
+    box-sizing: border-box;
+    font-family: sans-serif;
   }
   
   .center,.start-btn{
-    position: absolute;
+     position: sticky; 
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-5%, 6%);
   }
   .start-btn a{
-    font-size: 22px;
+    /* font-size: 22px; */
     background: green;
     color: #02242b;
     padding: 15px 18px;
@@ -138,6 +141,72 @@
     cursor: pointer;
     color: #fff;
   }
+
+  * {
+        box-sizing: border-box;
+      }
+      .openBtn {
+        display: flex;
+        justify-content: left;
+      }
+      .openButton {
+        border: none;
+        border-radius: 5px;
+        background-color: #1c87c9;
+        color: white;
+        padding: 14px 20px;
+        cursor: pointer;
+        position: fixed;
+      }
+      .loginPopup {
+        position: relative;
+        text-align: center;
+        width: 100%;
+      }
+      .formPopup {
+        display: none;
+        position: fixed;
+        left: 50%;
+        top: 25%;
+        transform: translate(-50%, 5%);
+        border: 3px solid #999999;
+        z-index: 9;
+      }
+      .formContainer {
+        max-width: 300px;
+        padding: 20px;
+        background-color: #fff;
+      }
+      .formContainer input[type=text],
+      .formContainer input[type=password] {
+        width: 100%;
+        padding: 15px;
+        margin: 5px 0 20px 0;
+        border: none;
+        background: #eee;
+      }
+      .formContainer input[type=text]:focus,
+      .formContainer input[type=password]:focus {
+        background-color: #ddd;
+        outline: none;
+      }
+      .formContainer .btn {
+        padding: 12px 20px;
+        border: none;
+        background-color: #8ebf42;
+        color: #fff;
+        cursor: pointer;
+        width: 100%;
+        margin-bottom: 15px;
+        opacity: 0.8;
+      }
+      .formContainer .cancel {
+        background-color: #cc0000;
+      }
+      .formContainer .btn:hover,
+      .openButton:hover {
+        opacity: 1;
+      }
   </style>
 
   <!-- Popup style End  -->
@@ -145,209 +214,146 @@
 </head>
 
 <body>
-    <div class="menu-bar">
-     <ul>
-        <li class="active navb" style="margin-right: 152px;"><a href="#">Colleges</a></li>
-        
-        <li class="navb"><a href="#">B.Tech</a>
-        <div class="sub-menu-1">
-          <ul>
-            <li class="hover-me"><a href="#">Colleges</a> <i class="fa fa-angle-right"></i> 
-             <div class="sub-menu-2">
-                <ul>
-                    <li><a href="/nit">NIT</a>  </li>
-                    <li><a href="/iit">IIT</a> </li>
-                    <li><a href="/iiit">IIIT</a> </li>
-                    <li><a href="/pvtbtech">Private</a> </li> 
-                  </ul>
-
-             </div>
-            
-            </li>
-            <li class="hover-me"><a href="#">Exam</a> <i class="fa fa-angle-right"></i>
-                <div class="sub-menu-2">
-                    <ul>
-                        <li><a href="/jee">JEE MAINS</a>  </li>
-                        <li><a href="/wbjee">WB JEE</a> </li>
-                        <li><a href="/ajee">JEE ADVANCED</a> </li>
-                        <li><a href="/bits">BITS PLANI</a> </li> 
-                      </ul>
+  <div> 
     
-                 </div>
-            </li>
-            
-            <li class="hover-me"><a href="#">Cut Off</a> <i class="fa fa-angle-right"></i>
-                <div class="sub-menu-2">
-                    <ul>
-                        <li><a href="/jeecutoff">JEE MAINS CUTOFF</a>  </li>
-                        <li><a href="/wbcutoff">WB JEE CUTOFF</a> </li>
-                        <li><a href="/ajcutoff">JEE ADVANCED CUTOFF</a> </li>
-                        <li><a href="/bitscutoff">BITS PLANI CUTOFF</a></li> 
-                      </ul>
-    
-                 </div>
-            </li> 
-          </ul>
-        </div>
-    </li>
-        <li class="navb"><a href="#">MBA</a>
-            <div class="sub-menu-1">
-                <ul>
-                  <li class="hover-me"><a href="#">Colleges</a> <i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/iim">IIM</a>  </li>
-                            <li><a href="/mbapvt">Top Private</a> </li>
-                          </ul>        
-                     </div>
-                </li>
-                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-
-                            <li><a href="/cat">CAT</a>  </li>
-                            <li><a href="/mat">MAT</a> </li>
-                            <li><a href="/gmat">GMAT</a> </li>
-                            <li><a href="/cmat">CMAT</a> </li> 
-                          </ul>
-        
-                     </div>
-                </li>
-                
-                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i> 
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/catcutoff">CAT Cutoff</a>  </li>
-                            <li><a href="/matcutoff">MAT Cutoff</a> </li>
-                            <li><a href="/gmatcutoff">GMAT Cutoff</a> </li>
-                            <li><a href="/cmatcutoff">CMAT Cutoff</a> </li> 
-                          </ul>
-                     </div>
-                 </li> 
-                </ul>
-              </div>
-        </li>
-        <li class="navb"><a href="#">MBBS</a>
-            <div class="sub-menu-1">
-                <ul>
-                  <li class="hover-me"><a href="#">Colleges</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/aiims">AIIMS</a>  </li>
-                            <li><a href="/mgovt">Top Govt</a> </li>
-                            <li><a href="/mpvt">Top Pvt</a> </li>
-              
-                          </ul>
-        
-                     </div>
-                  </li>
-                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/neet">NEET</a>  </li>
-                            
-                          </ul>      
-                     </div>
-                </li>
-                  
-                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/neetcutoff">NEET Cutoff</a>  </li>
-                            
-                          </ul>
-        
-                     </div>
-                 </li> 
-                </ul>
-              </div>
-        </li>
-        <li class="navb"><a href="#">LAW</a>
-            <div class="sub-menu-1">
-                <ul>
-                  <li class="hover-me"><a href="#">Colleges</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/laws">Top College</a>  </li>
-                          </ul>
-        
-                     </div>
-                 </li>
-                  <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="/clat">CLAT</a>  </li>
-                            <li><a href="#">LSAT</a> </li>
-                            <li><a href="#">AILET</a> </li>
-                             
-                          </ul>
-        
-                     </div>
-                 </li>
-                  
-                  <li class="hover-me"><a href="#">Cut Off</a><i class="fa fa-angle-right"></i>
-                    <div class="sub-menu-2">
-                        <ul>
-                            <li><a href="#">CLAT Cutoff</a>  </li>
-                            <li><a href="#">LSAT Cutoff</a> </li>
-                            <li><a href="#">AILET Cutoff</a> </li>
-                          
-                          </ul>
-        
-                     </div>
-                 </li> 
-                </ul>
-              </div>
-        </li>
-        
-
-        <li class="users"><button onclick="openForm()"><i class="fa fa-users"></i></button>
-            <!-- <div class="sub-menu-1">
-               <ul>
-                <li class="hover-me"><button style="background-color: green; color: white;" onclick="openForm()">Signin</button></li>
-               </ul>
-            </div> -->
-        </li>
-     </ul>
-    </div>
-
-
-  
-    <!-- This is Search Part in form -->
-
-    <form class="example" action="#">
-      <input type="text" placeholder="Search.." name="search">
-      <button type="submit"><i class="fa fa-search"></i></button>
-    </form>
-
-    <!-- This is a popup login form -->
-
-
-    
-
-    <div class="form-popup" id="myForm">
-      <form action="/login" class="form-container" method="post">
+  </div>
+  <div class="menu-bar">
+    <ul>
+       <li class="active navb" style="margin-right: 152px;"><a href="#">Colleges</a></li>
        
-      <h1>Login</h1>
+       <li class="navb"><a href="#">B.Tech</a>
+       <div class="sub-menu-1">
+         <ul>
+           <li class="hover-me"><a href="/signup">Colleges</a> <i class="fa fa-angle-right"></i> 
+          
+           
+           </li>
+           <li class="hover-me"><a href="#">Exam</a> <i class="fa fa-angle-right"></i>
+               <div class="sub-menu-2">
+                   <ul>
+                       <li><a href="/jee">JEE MAINS</a>  </li>
+                       <li><a href="/ajee">JEE ADVANCED</a> </li>
+                     </ul>
+   
+                </div>
+           </li>
+           
+         
+         </ul>
+       </div>
+   </li>
+       <li class="navb"><a href="#">MBA</a>
+           <div class="sub-menu-1">
+               <ul>
+                 <li class="hover-me"><a href="/mbasignup">Colleges</a> <i class="fa fa-angle-right"></i>
+                   
+               </li>
+                 <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                   <div class="sub-menu-2">
+                       <ul>
+
+                           <li><a href="/cat">CAT</a>  </li>
+                           
+                         </ul>
+       
+                    </div>
+               </li>
+               
+                
+               </ul>
+             </div>
+       </li>
+       <li class="navb"><a href="#">MBBS</a>
+           <div class="sub-menu-1">
+               <ul>
+                 <li class="hover-me"><a href="/mbbsignup">Colleges</a><i class="fa fa-angle-right"></i>
+                   
+                 </li>
+                 <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                   <div class="sub-menu-2">
+                       <ul>
+                           <li><a href="/neet">NEET</a>  </li>
+                           
+                         </ul>      
+                    </div>
+               </li>
+                 
+                 
+               </ul>
+             </div>
+       </li>
+       <li class="navb"><a href="#">LAW</a>
+           <div class="sub-menu-1">
+               <ul>
+                 <li class="hover-me"><a href="#">Colleges</a><i class="fa fa-angle-right"></i>
+                   <div class="sub-menu-2">
+                       <ul>
+                           <li><a href="/laws">Top College</a>  </li>
+                         </ul>
+       
+                    </div>
+                </li>
+                 <li class="hover-me"><a href="#">Exam</a><i class="fa fa-angle-right"></i>
+                   <div class="sub-menu-2">
+                       <ul>
+                           <li><a href="/clat">CLAT</a>  </li>
+                          
+                            
+                         </ul>
+       
+                    </div>
+                </li>
+                 
+           
+               </ul>
+             </div>
+       </li>
+       
+
+       <li class="navb"><a href="#">Login</a>
+         <div class="sub-menu-1">
+          <ul>
+            <li class="hover-me"><a href="/blogin">B.Tech</a> 
+          </li>
+            <li class="hover-me"><a href="/mlogin">MBA</a>
+          </li>
+          <li class="hover-me"><a href="/dlogin">MBBS</a>
+          </li>
+          <li class="hover-me"><a href="/llogin">LAW</a>
+          </li>
+          </ul>
+         </div>
+       </button>
+           <!-- <div class="sub-menu-1">
+              <ul>
+               <li class="hover-me"><button style="background-color: green; color: white;" onclick="openForm()">Signin</button></li>
+              </ul>
+           </div> -->
+       </li>
+       <!-- <li class="enquery"><i class="fa fa-users"></i>
+        <div class="start-btn">
     
-        <label for="email"><b>UserName</b></label>
-        <input type="text" placeholder="Enter Email" name="username" required>
+          <a href="#">Enquiry</a>
+       </div> -->
+       <li class="start-btn" style="padding: 20px;"><a href="#">Enquiry</a></li>
+       </li>
+    </ul>
+   </div>
     
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-    
-        <button type="submit" class="btn">Login</button>
-        <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
-      </form>
-    </div>
 
 
  <!-- This is a popup Registration page  -->
 
  <div class="popup">
-  <div class="start-btn">
+  <!-- <% if(msg !='' ){ %>
+    <p style="text-align: center; color: red; margin-top: 100px;">
+        <%= msg %>
+    </p>
+    <% } %> -->
+  <!-- <div class="start-btn">
+    
     <a href="#">Enquiry</a>
- </div>
+ </div> -->
  <div class="center modal-box">
 
     <div class="fas fa-times"></div>
@@ -356,35 +362,45 @@
 
 <div class="form_container">
 <form action="/register" name="form"  method="post">
+  
  <div class="form_wrap form_grp">
      <div class="form_item" name="fname">
          <label  name="fname">First Name</label>
-         <input type="text" name="fname">
+         <input type="text" name="fname" maxlength="15" placeholder="first name">
 
      </div>
      <div class="form_item">
          <label>Last Name</label>
-         <input type="text" name="lname">
+         <input type="text" name="lname" placeholder="last Name" maxlength="12">
 
      </div>
  </div>
  <div class="form_wrap">
      <div class="form_item">
          <label >Email Address</label>
-         <input type="text" name="email">
+         <input type="text"  name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder="email address">
 
      </div>
  </div>
 
  <div class="form_wrap">
      <div class="form_item">
-         <label>Phone</label>
-         <input type="text" value="+91 " maxlength="14" name="pnumber">
+         <label for="phone">Phone</label>
+         <input type="text" id="phone"  name="pnumber" maxlength="10" pattern="[1-9]{1}[0-9]{9}" placeholder="xxxxxxxxxx">
          <div class="error" id="phone"></div>
      </div>
  </div>
+
+ <div class="form_wrap">
+  <div class="form_item">
+      <label for="text">Enquery</label>
+      <input type="text" id="phone"  name="feedback" placeholder="Please Enter Your questions">
+      <div class="error" id="phone"></div>
+  </div>
+</div>
+
  <div class="btn">
-   <input type="submit" id="btn2" value="Register">
+   <input type="submit" id="btn2" value="Enquiry">
  </div>
 </form>
 </div>
@@ -439,13 +455,21 @@
 
 </div>
 
-
+<div></div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="static/scripts/responses.js"></script>
 <script src="static/scripts/chat.js"></script>
 
 
  <script>
+
+function openForm() {
+        document.getElementById("popupForm").style.display = "block";
+      }
+      function closeForm() {
+        document.getElementById("popupForm").style.display = "none";
+      }
+
   $(document).ready(function(){
     $('.start-btn').click(function(){
       $('.modal-box').toggleClass("show-modal");
